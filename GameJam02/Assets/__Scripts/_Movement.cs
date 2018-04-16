@@ -40,8 +40,6 @@ public class _Movement : MonoBehaviour
 
     public void MoveLeft()
     {
-        Debug.Log("Left");
-
         //Add Force Left
         Wisp.AddForce(-Wisp.transform.right * speed);
     }
@@ -49,7 +47,6 @@ public class _Movement : MonoBehaviour
     public void MoveRight()
     {
         //Add Force Right
-        Debug.Log("Right");
         Wisp.AddForce(Wisp.transform.right * speed);
     }
 

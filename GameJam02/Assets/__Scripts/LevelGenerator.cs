@@ -38,11 +38,14 @@ public class LevelGenerator : MonoBehaviour
     // Creates the first chunk
     private void CreateStartChunk()
     {
-        Chunk chunk = Instantiate<Chunk>(startChunkPrefabs[Random.Range(0, startChunkPrefabs.Length)], new Vector3(0.0f, 0.0f), Quaternion.identity);
-        chunk.Index = chunkCount;
+        if (startChunkPrefabs.Length > 0)
+        {
+            Chunk chunk = Instantiate<Chunk>(startChunkPrefabs[Random.Range(0, startChunkPrefabs.Length)], new Vector3(0.0f, 0.0f), Quaternion.identity);
+            chunk.Index = chunkCount;
 
-        chunks.Add(chunk);
-        chunkCount++;
+            chunks.Add(chunk);
+            chunkCount++;
+        }
     }
 
     private void CreateNextChunk()
@@ -96,14 +99,17 @@ public class LevelGenerator : MonoBehaviour
     // Generates x level of chunks ahead of the player.
     private void CreateNextSet()
     {
-        if (chunks.Count > 1)
+        if (chunkPrefabs.Length > 0)
         {
-            DeleteChunks();
-        }
+            if (chunks.Count > 1)
+            {
+                DeleteChunks();
+            }
 
-        for (int i = 0; i < activeChunkLimit; i++)
-        {
-            CreateNextChunk();
+            for (int i = 0; i < activeChunkLimit; i++)
+            {
+                CreateNextChunk();
+            }
         }
     }
 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScore : MonoBehaviour {
+public class UIScore : MonoBehaviour
+{
 
     const float STARTSCORE = 0;
     float currentScore = 0;
@@ -14,16 +15,20 @@ public class UIScore : MonoBehaviour {
     bool resetGame = false;
     bool endGame = false;
 
-    public GameObject player;
+    private GameObject player;
     public GameObject inGamePanel;
     public GameObject endGamePanel;
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         number = GetComponent<Text>();
 
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerstartingHeight.y = player.transform.position.y;
+
+
 
         reset();
     }
