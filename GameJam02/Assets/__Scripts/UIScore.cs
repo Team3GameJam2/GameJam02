@@ -11,6 +11,9 @@ public class UIScore : MonoBehaviour {
     Text number;
     bool canPlay = false;
 
+    bool resetGame = false;
+    bool endGame = false;
+
     public GameObject player;
     public GameObject inGamePanel;
     public GameObject endGamePanel;
@@ -33,21 +36,31 @@ public class UIScore : MonoBehaviour {
             currentScore = playerstartingHeight.y - player.transform.position.y;
             number.text = currentScore.ToString("F2");
         }
-        if (Input.GetKeyDown(KeyCode.R))
+
+        //debugging
+        if (Input.GetKey(KeyCode.Space))
         {
-            reset();
+            endGame = true;
         }
-        if (Input.GetKeyDown(KeyCode.S))
+
+        if (endGame)
         {
             disableInGamepanel();
+        }
+        if (resetGame)
+        {
+            reset();
         }
     }
 
     public void reset()
     {
+        resetGame = false;
         endGamePanel.SetActive(false);
         currentScore = STARTSCORE;
+
         player.transform.position = playerstartingHeight;
+
         number.text = currentScore.ToString();
         canPlay = true;
         inGamePanel.SetActive(true);
@@ -55,9 +68,25 @@ public class UIScore : MonoBehaviour {
 
     public void disableInGamepanel()
     {
+        endGame = false;
         canPlay = false;
+
+        player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
+        //player.GetComponent<basicMove>().setLeftF();
+        //player.GetComponent<basicMove>().setRightF();
 
         inGamePanel.SetActive(false);
         endGamePanel.SetActive(true);
+    }
+
+    public void OnClickReset()
+    {
+        resetGame = true;
+    }
+
+    public void OnEndGame()
+    {
+        endGame = true;
     }
 }
