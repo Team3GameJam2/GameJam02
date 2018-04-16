@@ -10,5 +10,9 @@
 **/*.userprefs
 **/*.pidb
 
+# Visual studo specific
+
+**/.vs/*
+
 # include meta files
 !*.*.meta

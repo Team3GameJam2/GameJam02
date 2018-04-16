@@ -275,22 +275,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114060004826083146, guid: 352f6fa7d7d7ef149903b49902368b04,
+    - target: {fileID: 114858130573543822, guid: 352f6fa7d7d7ef149903b49902368b04,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1260322921}
-    - target: {fileID: 114060004826083146, guid: 352f6fa7d7d7ef149903b49902368b04,
+    - target: {fileID: 114858130573543822, guid: 352f6fa7d7d7ef149903b49902368b04,
         type: 2}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1260322921}
-    - target: {fileID: 114858130573543822, guid: 352f6fa7d7d7ef149903b49902368b04,
+    - target: {fileID: 114060004826083146, guid: 352f6fa7d7d7ef149903b49902368b04,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1260322921}
-    - target: {fileID: 114858130573543822, guid: 352f6fa7d7d7ef149903b49902368b04,
+    - target: {fileID: 114060004826083146, guid: 352f6fa7d7d7ef149903b49902368b04,
         type: 2}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -436,10 +436,10 @@ MonoBehaviour:
   target: {fileID: 1260322922}
   deadzone:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+    x: -8.89
+    y: -1.58
+    width: 17.74
+    height: 3.93
   smoothPos: {x: 0, y: 0, z: 0}
   limits: []
 --- !u!1 &1055848037
