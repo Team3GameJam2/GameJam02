@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 33258680138551670}
   - component: {fileID: 114055186792139998}
   - component: {fileID: 64545879009921884}
+  - component: {fileID: 54785640386666822}
   m_Layer: 0
   m_Name: curve ramp 1x1
   m_TagString: Untagged
@@ -85,6 +86,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199795892208204}
   m_Mesh: {fileID: 0}
+--- !u!54 &54785640386666822
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199795892208204}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &64545879009921884
 MeshCollider:
   m_ObjectHideFlags: 1
