@@ -11,6 +11,8 @@ public class _Movement : MonoBehaviour
     //Clamped Speed
     public float maxSpeed;
 
+    bool moveRight;
+
 
     // Use this for initialization
     void Start()
@@ -28,6 +30,11 @@ public class _Movement : MonoBehaviour
 
         }
 
+        if(moveRight)
+        {
+            MoveRight();
+        }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
 
@@ -40,6 +47,8 @@ public class _Movement : MonoBehaviour
     
     public void MoveLeft()
     {
+        Debug.Log("Left");
+
         //Add Force Left
         Wisp.AddForce(-Wisp.transform.right* speed);
     }
@@ -47,8 +56,13 @@ public class _Movement : MonoBehaviour
     public void MoveRight()
     {
         //Add Force Right
-        Debug.Log("Im WORKING");
+        Debug.Log("Right");
         Wisp.AddForce(Wisp.transform.right* speed);
+    }
+
+    public void SetMoveRight(bool move)
+    {
+        moveRight = move;
     }
 
     public void MoveUp()
