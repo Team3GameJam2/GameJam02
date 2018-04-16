@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScore : MonoBehaviour
-{
+public class UIScore : MonoBehaviour {
 
     const float STARTSCORE = 0;
     float currentScore = 0;
@@ -15,22 +14,22 @@ public class UIScore : MonoBehaviour
     bool resetGame = false;
     bool endGame = false;
 
-    private GameObject player;
+    GameObject player;
     public GameObject inGamePanel;
     public GameObject endGamePanel;
 
     // Use this for initialization
-    void Awake()
+    void Awake ()
     {
         number = GetComponent<Text>();
-
+        number.text = currentScore.ToString("F2");
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerstartingHeight.y = player.transform.position.y;
 
-
-
-        reset();
+        disableInGamepanel();
+        
+        //reset();
     }
 
     // Update is called once per frame
@@ -40,12 +39,6 @@ public class UIScore : MonoBehaviour
         {
             currentScore = playerstartingHeight.y - player.transform.position.y;
             number.text = currentScore.ToString("F2");
-        }
-
-        //debugging
-        if (Input.GetKey(KeyCode.Space))
-        {
-            endGame = true;
         }
 
         if (endGame)
@@ -77,7 +70,7 @@ public class UIScore : MonoBehaviour
         canPlay = false;
 
         player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-
+        //REMOVE
         //player.GetComponent<basicMove>().setLeftF();
         //player.GetComponent<basicMove>().setRightF();
 
