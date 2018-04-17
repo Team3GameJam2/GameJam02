@@ -22,14 +22,13 @@ public class UIScore : MonoBehaviour {
     void Awake ()
     {
         number = GetComponent<Text>();
-        number.text = currentScore.ToString("F2");
+        number.text = STARTSCORE.ToString("F2");
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerstartingHeight.y = player.transform.position.y;
+        playerstartingHeight.x = player.transform.position.x;
 
         disableInGamepanel();
-        
-        //reset();
     }
 
     // Update is called once per frame
@@ -38,6 +37,9 @@ public class UIScore : MonoBehaviour {
         if (canPlay)
         {
             currentScore = playerstartingHeight.y - player.transform.position.y;
+            if (currentScore <= 0)
+                currentScore = 0;
+
             number.text = currentScore.ToString("F2");
         }
 
@@ -70,9 +72,6 @@ public class UIScore : MonoBehaviour {
         canPlay = false;
 
         player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        //REMOVE
-        //player.GetComponent<basicMove>().setLeftF();
-        //player.GetComponent<basicMove>().setRightF();
 
         inGamePanel.SetActive(false);
         endGamePanel.SetActive(true);
