@@ -7,7 +7,7 @@ using UnityEditor;
 [RequireComponent(typeof(Camera))]
 public class DeadzoneCamera : MonoBehaviour
 {
-    public Renderer target;
+    private Transform target;
     public Rect deadzone;
     public Vector3 smoothPos;
 
@@ -17,11 +17,16 @@ public class DeadzoneCamera : MonoBehaviour
     protected Camera _camera;
     protected Vector3 _currentVelocity;
 
+    private void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     public void Start()
     {
         smoothPos = target.transform.position;
         smoothPos.z = transform.position.z;
+        smoothPos.x = transform.position.x;
         _currentVelocity = Vector3.zero;
 
         _camera = GetComponent<Camera>();
@@ -36,7 +41,7 @@ public class DeadzoneCamera : MonoBehaviour
     {
         float localY = target.transform.position.y - transform.position.y;
 
-        if (localY<deadzone.yMin)
+        if (localY < deadzone.yMin)
         {
             smoothPos.y += localY - deadzone.yMin;
         }
@@ -50,7 +55,6 @@ public class DeadzoneCamera : MonoBehaviour
         current.y = smoothPos.y;
         transform.position = Vector3.SmoothDamp(current, smoothPos, ref _currentVelocity, 0.1f);
     }
-
 
     public void OnSceneGUI()
     {
