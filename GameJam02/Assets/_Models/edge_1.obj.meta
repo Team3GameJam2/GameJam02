@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: ac86816bbd341f04db6566715f2239e2
-timeCreated: 1523924359
+guid: 868f647749a44bf47aa45129d1432a17
+timeCreated: 1523931694
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: edge_2
-    400000: //RootNode
-    400002: edge_2
-    2100000: edge_2Mat
-    2300000: edge_2
-    3300000: edge_2
-    4300000: edge_2
+    100000: edge_1
+    100002: //RootNode
+    400000: edge_1
+    400002: //RootNode
+    2100000: edge_1Mat
+    2300000: edge_1
+    3300000: edge_1
+    4300000: edge_1
   externalObjects: {}
   materials:
     importMaterials: 1
