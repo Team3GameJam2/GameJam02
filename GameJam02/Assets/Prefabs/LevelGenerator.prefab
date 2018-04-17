@@ -51,8 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baa7b0b73e012940915354da78e1de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startChunkPrefabs: []
-  chunkPrefabs: []
-  chunkSize: {x: 10, y: 6}
+  startChunkPrefabs:
+  - {fileID: 114853365925577586, guid: 7004a50e1da318c449bdc19c2672d79b, type: 2}
+  chunkPrefabs:
+  - {fileID: 114824989974369230, guid: f236fdea1605bce409af283e2ffa699b, type: 2}
+  - {fileID: 114483008085130012, guid: 9ffcbcbb34de7a94eadfd7147cd6e713, type: 2}
+  - {fileID: 114986710897558520, guid: 852e0b674c0a07b46999dd8fa023226c, type: 2}
+  chunkSize: {x: 17, y: 10}
   activeChunkLimit: 5
   buffer: 1
