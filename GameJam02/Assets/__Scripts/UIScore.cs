@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class UIScore : MonoBehaviour {
+public class UIScore : MonoBehaviour
+{
 
     const float STARTSCORE = 0;
     float currentScore = 0;
     public Vector2 playerstartingHeight = new Vector2(0, 0);
     Text number;
-    bool canPlay = false;
 
-    bool resetGame = false;
+    public AudioClip WispSound;
+
+
+    [SerializeField]
     bool endGame = false;
 
     GameObject player;
-    public GameObject inGamePanel;
+    //public GameObject inGamePanel;
     public GameObject endGamePanel;
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         number = GetComponent<Text>();
         number.text = STARTSCORE.ToString("F2");
@@ -28,62 +32,35 @@ public class UIScore : MonoBehaviour {
         playerstartingHeight.y = player.transform.position.y;
         playerstartingHeight.x = player.transform.position.x;
 
-        disableInGamepanel();
+        player.GetComponent<_Movement>().onDeath += DelayedReset;
+
+        endGame = false;
+        endGamePanel.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canPlay)
-        {
-            currentScore = playerstartingHeight.y - player.transform.position.y;
-            if (currentScore <= 0)
-                currentScore = 0;
+        currentScore = playerstartingHeight.y - player.transform.position.y;
+        if (currentScore <= 0)
+            currentScore = 0;
 
-            number.text = currentScore.ToString("F2");
-        }
-
-        if (endGame)
-        {
-            disableInGamepanel();
-        }
-        if (resetGame)
-        {
-            reset();
-        }
+        number.text = currentScore.ToString("F2");
     }
 
-    public void reset()
+    public void DelayedReset()
     {
-        resetGame = false;
+        Invoke("ResetGame", 1.0f);
+    }
+
+    private void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ButtonClicked()
+    {
         endGamePanel.SetActive(false);
-        currentScore = STARTSCORE;
-
-        player.transform.position = playerstartingHeight;
-
-        number.text = currentScore.ToString();
-        canPlay = true;
-        inGamePanel.SetActive(true);
-    }
-
-    public void disableInGamepanel()
-    {
-        endGame = false;
-        canPlay = false;
-
-        player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-
-        inGamePanel.SetActive(false);
-        endGamePanel.SetActive(true);
-    }
-
-    public void OnClickReset()
-    {
-        resetGame = true;
-    }
-
-    public void OnEndGame()
-    {
-        endGame = true;
+        player.GetComponent<AudioSource>().PlayOneShot(WispSound);
     }
 }
