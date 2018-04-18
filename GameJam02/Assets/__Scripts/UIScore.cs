@@ -13,6 +13,7 @@ public class UIScore : MonoBehaviour
     Text number;
 
     public AudioClip WispSound;
+    public AudioClip Death;
 
 
     [SerializeField]
@@ -50,6 +51,7 @@ public class UIScore : MonoBehaviour
 
     public void DelayedReset()
     {
+        player.GetComponent<AudioSource>().PlayOneShot(Death);
         Invoke("ResetGame", 1.0f);
     }
 

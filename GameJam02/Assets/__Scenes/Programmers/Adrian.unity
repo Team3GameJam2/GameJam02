@@ -355,26 +355,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 135786684826827680, guid: 7ad33586784b2394aad80d2cf93b0ca4,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 114306850848927128, guid: 7ad33586784b2394aad80d2cf93b0ca4,
-        type: 2}
-      propertyPath: lockRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114306850848927128, guid: 7ad33586784b2394aad80d2cf93b0ca4,
-        type: 2}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 54186234742929672, guid: 7ad33586784b2394aad80d2cf93b0ca4,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ad33586784b2394aad80d2cf93b0ca4, type: 2}
   m_IsPrefabParent: 0
@@ -491,7 +471,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef635248951dac1468550689ca2b98f6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -827,7 +807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerstartingHeight: {x: 0, y: 0}
-  WispSound: {fileID: 0}
+  WispSound: {fileID: 8300000, guid: a2047831c4925244ba8f189f1fc200c8, type: 3}
+  Death: {fileID: 8300000, guid: 9e888a7c2b391504d8a923bd97a8cd10, type: 3}
   endGame: 0
   endGamePanel: {fileID: 1586912971}
 --- !u!114 &1960593999

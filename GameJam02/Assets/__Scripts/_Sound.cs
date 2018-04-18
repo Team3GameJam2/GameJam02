@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class _Sound : MonoBehaviour {
 
-    public Collider playerCol;
     public AudioClip[] ImpactSound;
     private AudioSource audio;
 
@@ -13,7 +12,6 @@ public class _Sound : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        playerCol = GetComponent<Collider>();
         audio = GetComponent<AudioSource>();
 		
 	}
@@ -23,21 +21,18 @@ public class _Sound : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+   
+
+    private void OnCollisionEnter(Collision collision)
     {
-        other = playerCol;
         if (iscoll == true)
         {
-            audio.PlayOneShot(ImpactSound[Random.Range(0,1)]);
+            audio.PlayOneShot(ImpactSound[Random.Range(0, 1)]);
         }
-        
-
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        other = playerCol;
         iscoll = true;
     }
-
 }
