@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: a90eed088c44ca242bdca4a97cebc4f2
-timeCreated: 1524009496
+guid: 9f16f27734ff17b4e94f756e5ef6d8c1
+timeCreated: 1524013463
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: ramp_curve_2
-    400000: //RootNode
-    400002: ramp_curve_2
-    2100000: ramp_curve_2Mat
-    2300000: ramp_curve_2
-    3300000: ramp_curve_2
-    4300000: ramp_curve_2
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

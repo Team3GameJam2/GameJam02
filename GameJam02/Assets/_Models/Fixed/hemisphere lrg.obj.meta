@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 0d61affc716e9bd42b3a245606268202
-timeCreated: 1524009496
+guid: 86687d6e1e758dc48ad88c4c745e598e
+timeCreated: 1524013463
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: circle_2
+    100000: default
     100002: //RootNode
-    400000: circle_2
+    400000: default
     400002: //RootNode
-    2100000: circle_2Mat
-    2300000: circle_2
-    3300000: circle_2
-    4300000: circle_2
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
