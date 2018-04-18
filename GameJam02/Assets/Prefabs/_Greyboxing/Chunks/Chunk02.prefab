@@ -10502,6 +10502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryPoint: 10
   exitPoint: 10
+  index: 0
+  isTriggerForGen: 0
 --- !u!114 &114506191584319336
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,8 +11,8 @@ public class _Movement : MonoBehaviour
     //Clamped Speed
     public float maxSpeed;
 
-    delegate void Dead();
-    Dead onDeath;
+    public delegate void Dead();
+    public Dead onDeath;
 
     // Use this for initialization
     void Awake()
