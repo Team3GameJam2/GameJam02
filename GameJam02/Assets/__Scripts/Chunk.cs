@@ -63,8 +63,10 @@ public class Chunk : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isTriggerForGen)
+        if (isTriggerForGen && other.CompareTag("Player"))
         {
+            Debug.Log("test!");
+
             if (playerExitedBuffer != null)
             {
                 playerExitedBuffer();

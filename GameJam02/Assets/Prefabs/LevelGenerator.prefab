@@ -59,4 +59,4 @@ MonoBehaviour:
   - {fileID: 114986710897558520, guid: 852e0b674c0a07b46999dd8fa023226c, type: 2}
   chunkSize: {x: 17, y: 10}
   activeChunkLimit: 5
-  buffer: 1
+  buffer: 2
