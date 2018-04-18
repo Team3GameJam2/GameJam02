@@ -14,28 +14,33 @@ public class _Movement : MonoBehaviour
     public delegate void Dead();
     public Dead onDeath;
 
+    bool canMove = true;
+
     // Use this for initialization
     void Awake()
     {
         //Wisps rigidbody
         Wisp = GetComponent<Rigidbody>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (canMove)
         {
-            if (Input.mousePosition.x < Screen.width * 0.5f)
+            if (Input.GetMouseButton(0))
             {
-                MoveLeft();
-            }
-            else
-            {
-                MoveRight();
+                if (Input.mousePosition.x < Screen.width * 0.5f)
+                {
+                    MoveLeft();
+                }
+                else
+                {
+                    MoveRight();
+                }
             }
         }
-
         //Clamp for Max Velocity
         Wisp.velocity = new Vector3(Mathf.Clamp(Wisp.velocity.x, -maxSpeed, maxSpeed), Wisp.velocity.y);
     }
@@ -59,6 +64,7 @@ public class _Movement : MonoBehaviour
         {
             if (onDeath != null)
             {
+                canMove = false;
                 onDeath();
             }
         }
